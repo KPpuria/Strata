@@ -12,13 +12,16 @@ class Game:
 
     #integer type validator
     def is_valid_input(self,data: int) -> bool:
-        return int(data) and int(data)>0
+        try:
+            return int(data) and int(data)>0
+        except:
+            return False
 
     #check if score entered is valid
     def is_valid_run(self,data: int) -> bool:
         if(data == '0'):
             return True
-        return data.isdigit() and int(data) <= 6 and int(data) >=0 and int(data) != 5
+        return int(data) <= 6 and int(data) >=0 and int(data) != 5
 
     
     def create_team(self,no_of_players,batting_order):
